@@ -63,7 +63,7 @@ body {
     width: 90px;
     height: 70px;
     position: absolute;
-    bottom: 190px;
+    bottom: 215px;
     left: 100px;
 
 }
@@ -84,12 +84,21 @@ body {
     background-size: contain;
 }
 
+.hit {
+    width: 90px;
+    height: 70px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("./img/hit.png");
+    animation: hit 1s linear
+}
 
 #sky {
     top: 0;
     left: 0;
     position: absolute;
-    background: url("./img/sky_bg.png") repeat 0 0;
+    background: url("./img/sky_gb1.png") repeat 0 0;
     width: 100%;
     height: 44%;
     background-size: auto 100%;
@@ -98,7 +107,7 @@ body {
 
 #grass {
     position: absolute;
-    background: url("./img/grass_bg.png") repeat 0 0;
+    background: url("./img/grass_bg_1.png") repeat 0 0;
     width: 100%;
     height: 50%;
     top: 45px;
@@ -107,7 +116,7 @@ body {
 }
 
 .playerJump {
-    animation: playerjump 1s linear, playerAnimationJump 1s linear;
+    animation: playerjump 1s linear, playerAnimationJump 1s;
     background-repeat: no-repeat;
     background-size: contain;
     transition: width 0s, height 0s, background-color 0s, transform 0s;
@@ -115,15 +124,18 @@ body {
 }
 
 .obstaclesMovement {
-    animation: obstacleMove 2s linear infinite;
+    animation: obstacleMove 2s linear infinite, blackcat 1s infinite;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: width 0s, height 0s, background-color 0s, transform 0s;
 }
 
 #obstacle_small {
     user-select: none;
     position: absolute;
-    width: 54px;
-    height: 80px;
-    bottom: 180px;
+    width: 60px;
+    height: 50px;
+    bottom: 200px;
     right: 0;
 }
 
@@ -134,7 +146,7 @@ body {
 
 @keyframes playerjump {
     0% {
-        bottom:190px;
+        bottom:215px;
     }
     45%, 55% {
         bottom:300px;
@@ -200,3 +212,33 @@ body {
     }
 }
 
+@keyframes hit {
+    0% {
+        bottom:215px;
+    }
+    100% {
+        bottom:200px;
+    }
+}
+
+@keyframes blackcat {
+    0% {
+
+        background-image: url("./img/obs_1.png");
+
+    }
+    25% {
+
+        background-image: url("./img/obs_2.png");
+    }
+    50% {
+        background-image: url("./img/obs_3.png");
+    }
+    75% {
+        background-image: url("./img/obs_4.png");
+    }
+    100% {
+        background-image: url("./img/obs_1.png");
+    }
+
+}

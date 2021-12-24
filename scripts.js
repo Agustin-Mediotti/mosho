@@ -5,8 +5,10 @@ const buttonPlayStop = document.getElementById("buttonPlayStop");
 const backgroundSky = document.getElementById("sky");
 const backgroundGrass = document.getElementById("grass");
 const board = document.getElementById("board");
+
 const music = document.querySelector("#music");
 const jmpSound = document.querySelector("#jump");
+const hitSound = document.querySelector("#hit");
 
 music.loop = true;
 
@@ -105,3 +107,23 @@ function resetScore() {
     score = 0;
     document.getElementById("score").innerText = score;
 }
+
+// COLLISIONS
+setInterval(function(){
+    if(Math.floor(player.getBoundingClientRect().right) >= Math.floor(obstacle_sm.getBoundingClientRect().left) && Math.floor(player.getBoundingClientRect().bottom) >= Math.floor(obstacle_sm.getBoundingClientRect().top)){
+
+
+        obstacle_sm.style.animationPlayState = 'paused';
+        backgroundSky.style.animationPlayState = 'paused';
+        backgroundGrass.style.animationPlayState = 'paused';
+        playerMove.style.animationPlayState = 'paused';
+        music.pause();
+        stopScore();
+
+        hitSound.play();
+
+        playerMove.classList.remove("playerMove");
+        player.classList.remove("playerJump");
+        player.classList.add("hit");
+    }
+}, 500)

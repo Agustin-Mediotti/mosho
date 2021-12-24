@@ -110,7 +110,7 @@ function resetScore() {
 
 // COLLISIONS
 setInterval(function(){
-    if(Math.floor(player.getBoundingClientRect().right) >= Math.floor(obstacle_sm.getBoundingClientRect().left) && Math.floor(player.getBoundingClientRect().bottom) >= Math.floor(obstacle_sm.getBoundingClientRect().top)){
+    if(player.getBoundingClientRect().right >= obstacle_sm.getBoundingClientRect().left && player.getBoundingClientRect().bottom >= obstacle_sm.getBoundingClientRect().top){
 
 
         obstacle_sm.style.animationPlayState = 'paused';

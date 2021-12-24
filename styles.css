@@ -78,7 +78,7 @@ body {
     width: 90px;
     height: 70px;
     position: absolute;
-    animation: playerMove 0.5s linear infinite;
+    animation: playerMove 1s infinite;
     transition: width 0s, height 0s, background-color 0s, transform 0s;
     background-repeat: no-repeat;
     background-size: contain;
@@ -107,11 +107,15 @@ body {
 }
 
 .playerJump {
-    animation: playerjump 1s linear;
+    animation: playerjump 1s linear, playerAnimationJump 1s linear;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url("./img/jump.png");
+    transition: width 0s, height 0s, background-color 0s, transform 0s;
 
+}
+
+.obstaclesMovement {
+    animation: obstacleMove 2s linear infinite;
 }
 
 #obstacle_small {
@@ -121,7 +125,6 @@ body {
     height: 80px;
     bottom: 180px;
     right: 0;
-    animation: obstacleSmallMove 2s linear infinite;
 }
 
 #obstacle_small img {
@@ -138,19 +141,35 @@ body {
     }
 }
 
+@keyframes playerAnimationJump {
+    0% {
+        background-image: url("./img/jump_1.png");
+    }
+    100% {
+        background-image: url("./img/jump_2.png");
+    }
+}
+
 @keyframes playerMove {
     0% {
 
         background-image: url("./img/walk_1.png");
 
     }
-    50% {
+    25% {
 
         background-image: url("./img/walk_2.png");
     }
-    100% {
+    50% {
         background-image: url("./img/walk_3.png");
     }
+    75% {
+        background-image: url("./img/walk_4.png");
+    }
+    100% {
+        background-image: url("./img/walk_6.png");
+    }
+
 }
 
 
@@ -172,7 +191,7 @@ body {
     }
 }
 
-@keyframes obstacleSmallMove {
+@keyframes obstacleMove {
     0% {
         right: 0%;
     }

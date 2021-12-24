@@ -42,6 +42,19 @@ body {
     border-width: 37px 0 37px 60px;
 }
 
+btn_restart {
+    background: transparent;
+    box-sizing: border-box;
+    width: 0;
+    height: 74px;
+    border-radius: 50%;
+    border-color: transparent transparent transparent #202020;
+    cursor: pointer;
+    border-style: double;
+    border-width: 0px 0 0px 60px;
+
+}
+
 .button {
     border: 0;
     background: transparent;
@@ -183,7 +196,6 @@ body {
     }
 
 }
-
 
 @keyframes skyBackground {
     from {
